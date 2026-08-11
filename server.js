@@ -62,5 +62,15 @@ app.get('/menu', (req, res) => {
     })
 });
 
+app.get('/menu/:category', (req, res) => {
+    const category = req.params.category;
+    const filteredMenu = RESTAURANT.menu.filter((item) => {
+        return item.category === category
+    })
+    console.log(filteredMenu)
 
-app.listen(3000);
+    res.render('category.ejs', { filteredMenu })
+})
+
+
+app.listen(3002);

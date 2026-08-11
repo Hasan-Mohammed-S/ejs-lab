@@ -11,7 +11,17 @@
     <h1>Category Page</h1>
     <%- include('./partials/nav') %>
 
+        <ul>
+            <% filteredMenu.forEach((item) => { %>
+                <li>
+                    <%= item.name%>:
+                        <%= item.price%>:
+                            <%= item.rating%>:
+                                <%= item.details %>
 
+                </li>
+                <% }); %>
+        </ul>
 
 
 
